@@ -1,12 +1,12 @@
 {
-	"geode": "5.0.0-alpha.1",
+	"geode": "5.0.0-beta.1",
 	"gd": {
 		"win": "*",
 		"mac": "*"
 	},
 	"id": "prevter.vapor",
 	"name": "Vapor",
-	"version": "v1.0.0",
+	"version": "v1.1.0",
 	"developer": "prevter",
 	"description": "crack mod is crazy",
 	"early-load": true
