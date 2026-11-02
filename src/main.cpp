@@ -33,7 +33,7 @@ $execute {
     auto size = baseSize();
 
     auto offset = sinaps::find<
-        GEODE_WINDOWS("48 8B D8 ^ FF 15 ? ? ? ? 85 C0 74 11")
+        GEODE_WINDOWS("48 8B D8 ^ FF 15 ? ? ? ? 85 C0 0F 85")
         GEODE_INTEL_MAC("E8 ? ? ? ? 48 89 C7 ^ E8 ? ? ? ? 84 C0 0F 84 ? ? ? ? 4C 8D 73")
         GEODE_ARM_MAC("22 00 80 52 ? ? ? ? ? ? ? ? ^ ? ? ? ? ? ? 00 36")
     >(base, size);
@@ -43,7 +43,7 @@ $execute {
 
     auto addr = reinterpret_cast<void*>(base + offset);
     std::vector<uint8_t> bytes = {
-        GEODE_WINDOWS(0xe9, 0x8a, 0x00, 0x00, 0x00)
+        GEODE_WINDOWS(0x48, 0x8d, 0x4c, 0x24, 0x60, 0xeb, 0x32)
         GEODE_INTEL_MAC(0xb0, 0x01, 0x90, 0x90, 0x90)
         GEODE_ARM_MAC(0x1F, 0x20, 0x03, 0xD5, 0x1F, 0x20, 0x03, 0xD5)
     };
